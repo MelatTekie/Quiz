@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Forum CSS Grid</title>
+    <style>
+    .title{
+      display:grid;
+      grid-gap:1em;
+      grid-template-rows: 33.33% 33.33% 33.33%;
+    }
+    .container {
+      display:grid;
+      grid-template-columns: 30% 50% 20%;
+      grid-gap:1em;
+    }
+    /*orientation for mobile and desktop devices*/
+  /*  @media screen and (orientation: portrait) {
+      #title {
+        width: 100%;
+      }
+    }
+    @media screen and (orientation: landscape) {
+  #title {
+    position: fixed;
+    width: 2.65em;
+    height: 100%;
+  } */
+
+    .main{
+      display:grid;
+        grid-gap:1em;
+    }
+    .icon{
+      display:grid;
+        grid-gap:1em;
+    }
+
+    .container > div{
+
+      padding:1em;
+    }
+    .p2{
+      color: blue;
+    }
+    .footer {
+      display:grid;
+
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: black;
+   color: white;
+   text-align: center;
+}
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div class="cssGrid">
+  <div class="container">
+  <div class="title">
+      <div><h1> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>  <p><script> document.write(new Date().toLocaleDateString()); </script> </p></div>
+      <font color="blue">Lorem ipsum dolor sit amet.</font>
+      <font color="blue">Lorem ipsum dolor sit amet.</font>
+  </div>
+<div class="main">
+
+
+  <div>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita ipsam sint reprehenderit consectetur cum ea porro alias mollitia adipisci aliquam ut fuga enim doloremque quia dolorum, eius autem, sit molestiae, natus possimus ipsa doloribus nobis laborum ipsum. Fugit ullam laudantium magnam quibusdam veritatis ab, ipsam sed.
+ <h2>Lorem ipsum dolor sit amet, consectetur adipisicing.</h2>
+ <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate enim, ipsam molestiae sapiente officia sint reiciendis id nisi nulla excepturi, consectetur error dignissimos officiis vero accusantium nemo, ut quis maiores.</P>
+ <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo quod recusandae iure pariatur saepe, incidunt dolore maxime molestiae perferendis placeat.</p>
+  <font color="blue">Lorem ipsum dolor sit amet.</font>
+<p>  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci illum molestias voluptas dicta illo quas nesciunt iste error. Deleniti soluta corrupti laboriosam, ea, amet dicta voluptate unde esse sequi, ab magni. Ab pariatur, fugit asperiores maxime id aliquid. Ut, quisquam, alias. Nesciunt officiis aspernatur possimus delectus quod consequuntur commodi aut voluptates ipsa asperiores labore accusantium architecto reiciendis iste quos, libero maxime dicta illum. Fugiat repudiandae et ab assumenda quis hic, tempora quasi beatae voluptate voluptas, recusandae non, eum eveniet illo!</p>
+  </div>
+  <div class="img">
+    <img src="news.jpg" alt="news letter" width="320" height="320">
+  </div>
+<h2>Lorem ipsum dolor sit amet, consectetur adipisicing.</h2>
+<P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate enim, ipsam molestiae sapiente officia sint reiciendis id nisi nulla excepturi, consectetur error dignissimos officiis vero accusantium nemo, ut quis maiores.</P>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo quod recusandae iure pariatur saepe, incidunt dolore maxime molestiae perferendis placeat.</p>
+ <font color="blue">Lorem ipsum dolor sit amet.</font>
+<p>  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci illum molestias voluptas dicta illo quas nesciunt iste error. Deleniti soluta corrupti laboriosam, ea, amet dicta voluptate unde esse sequi, ab magni. Ab pariatur, fugit asperiores maxime id aliquid. Ut, quisquam, alias. Nesciunt officiis aspernatur possimus delectus quod consequuntur commodi aut voluptates ipsa asperiores labore accusantium architecto reiciendis iste quos, libero maxime dicta illum. Fugiat repudiandae et ab assumenda quis hic, tempora quasi beatae voluptate voluptas, recusandae non, eum eveniet illo!</p>
+</div>
+
+
+<div class ="icons">
+<ui>
+<li class="fa fa-facebook-square"></li>
+<li class="fa fa-twitter"></li>
+<li class="fa fa-linkedin"></li>
+</ui>
+
+
+</div>
+
+</div>
+<div class="footer">
+  <p>INFORM and Forum Communications Company</p>
+</div>
+</div>
+
+
+
+</body>
+
+
+
+</html>
