@@ -1,0 +1,142 @@
+<!-- Audio Source : https://www.bensound.com -->
+<!-- Giphy Source : https://media.giphy.com/media/l3E6tfnrASiOukiKk/giphy.gif -->
+<!-- Author : Melat Tekie -->
+
+<html>
+  <head >
+    <title>
+      HeadLines
+    </title>
+    <!-- downloaded giph instead of streaming to avoid cross browser cookie -->
+    <style>
+      body{
+        font-family : "Aerial", sans-serif;
+        background-image: url("giphy.webp");
+        SameSite=None;
+      }
+
+      #container{
+        width:300px;
+        height:600px;
+        border: 1px solid #000;
+        text-align: center;
+        margin: auto;
+        background-color: #A9A9A9;
+        margin:0 auto;
+        overflow-x: auto;
+        overflow-y : hidden;
+      }
+
+    h {
+      overflow: hidden;
+      background-color: black;
+      color: white;
+     }
+
+   .footer {
+     position: fixed;
+     left: 0;
+     bottom: 30;
+     width: 100%;
+     text-align: center;
+    }
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    }
+
+ tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+ </style>
+    <body>
+      <!-- inserted background audio here -->
+      <audio id="backgroundAudio" autoplay loop>
+        <source src="bensound-inspire.mp3">
+      </audio>
+
+      <!-- Main Container for Widget -->
+      <div class="wrap" id="container">
+        <h class="title "> Welcome to Newsflix <br> Your trusty neighborhood tabloid©</h><br><br>
+        <p>Please scroll to your right to view more 👉</p>
+
+        <div class="main"> <table cellspacing="30" id="news"><tr><td>Headlines</td><td>Link to Read More</td> <td>Source</td> <td>Author</td> <td>Created</td></tr></table></div>
+
+        <div class="footer"><input id = "btnSubmit" type="submit" value="Next Headline"/></div>
+      </div>
+
+      <!-- JQUERY-->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script>
+
+        $(document).ready(function(){
+
+           //running code onload so that widget does'nt appear empty
+
+          //adjusting bacground track for web page
+          document.getElementById("backgroundAudio").volume = 0.1;
+
+          //inserting colums in widget using dom
+          var table = document.getElementById("news");
+          var row = table.insertRow(1);
+          var cell1 = row.insertCell(0);
+          var cell2 = row.insertCell(1);
+          var cell3 = row.insertCell(2);
+          var cell4 = row.insertCell(3);
+          var cell5 = row.insertCell(4);
+
+          //getting json object
+          $.getJSON( "https://www.reddit.com/r/worldnews.json", function( data ) {
+              var worldnews = data.data.children;
+
+              //applying random number generator for fecthing data from json object
+              var randomNumber = 1 + Math.floor(Math.random() * worldnews.length);
+
+             //making sure data object is returned
+             if (worldnews){
+
+
+                    cell1.innerHTML = worldnews[randomNumber].data.title;
+                    cell2.innerHTML =worldnews[randomNumber].data.url;
+                    cell3.innerHTML = worldnews[randomNumber].data.domain ;
+                    cell4.innerHTML = worldnews[randomNumber].data.author ;
+                    cell5.innerHTML = new Date(worldnews[randomNumber].data.created) ;
+
+                }
+
+      });
+
+      //running code again on buttom click this time
+      $("#btnSubmit").click(function(){
+
+
+
+        $.getJSON( "https://www.reddit.com/r/worldnews.json", function( data ) {
+            var worldnews = data.data.children;
+            var randomNumber = 1 + Math.floor(Math.random() * worldnews.length);
+
+
+
+            if (worldnews){
+
+              cell1.innerHTML = worldnews[randomNumber].data.title;
+              cell2.innerHTML =worldnews[randomNumber].data.url;
+              cell3.innerHTML = worldnews[randomNumber].data.domain ;
+              cell4.innerHTML = worldnews[randomNumber].data.author ;
+              cell5.innerHTML = new Date(worldnews[randomNumber].data.created) ;
+               }
+      });
+
+      //minimizing content shown on widget by deleting extra row
+      if(  table.rows.length > 7){
+        table.deleteRow(7);
+      }
+      });
+        });
+
+</script>
+    </body>
+  </head>
+</html>
